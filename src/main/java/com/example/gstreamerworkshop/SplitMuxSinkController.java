@@ -34,11 +34,11 @@ public class SplitMuxSinkController {
         List<String> commandLineArgs = new ArrayList<>();
 
         commandLineArgs.add("filesrc");
-        commandLineArgs.add("location=/Users/fewwcom/Downloads/aaaaa.mov");
+        commandLineArgs.add("location=/Users/fewwcom/Downloads/test/aaaaa.MP4");
         commandLineArgs.add("! qtdemux");
         commandLineArgs.add("! splitmuxsink");
-        commandLineArgs.add("location=/Users/fewwcom/Downloads/aaaaa-%05d.mov");
-        commandLineArgs.add("max-size-bytes=21000000");
+        commandLineArgs.add("location=/Users/fewwcom/Downloads/test/aaaaa-%05d.MP4");
+        commandLineArgs.add("max-size-bytes=610000000");
 
         /**
          * Use Gst.parseLaunch() to create a pipeline from a GStreamer string

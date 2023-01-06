@@ -12,14 +12,25 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.newrelic.logging:log4j2:2.6.0'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'net.java.dev.jna:jna:5.10.0'
     implementation 'net.java.dev.jna:jna-platform:5.10.0'
     implementation 'org.freedesktop.gstreamer:gst1-java-core:1.4.0'
+    implementation 'org.apache.tika:tika-core:2.6.0'
+    implementation 'org.apache.tika:tika-parsers:2.6.0'
+    implementation 'org.apache.tika:tika:2.6.0'
+    implementation 'org.apache.tika:tika-app:2.6.0'
 }
 
 tasks.named('test') {
