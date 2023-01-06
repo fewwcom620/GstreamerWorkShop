@@ -32,14 +32,8 @@ public class ImageSequenceController {
 
         List<String> commandLineArgs = new ArrayList<>();
 
-        String source = "gst-launch " +
-                "v4l2src " +
-                "device=/dev/video1 " +
-                "! video/x-raw-yuv,framerate=30/1 " +
-                "! queue ! ffmpegcolorspace ! jpgenc ! multifilesink " +
-                "location=\"frame%d.png\"";
         commandLineArgs.add("filesrc");
-        commandLineArgs.add("location=/Users/fewwcom/Downloads/test/aaaaa-00000.mov");
+        commandLineArgs.add("location=/Users/fewwcom/Downloads/test/aaaaa-00000.MP4");
         commandLineArgs.add("! decodebin  ! videorate ! video/x-raw,framerate=" + capturePerSecond + "/1 ! jpegenc ! multifilesink");
         commandLineArgs.add("location=/Users/fewwcom/Downloads/test/aaaaa-%05d.jpg");
 
